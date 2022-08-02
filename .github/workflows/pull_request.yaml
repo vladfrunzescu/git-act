@@ -1,10 +1,4 @@
-name: PR Approval
-on:
-  pull_request:
-    branches:
-      - master
-    types: [opened] # probably the only one you need
-
+on: pull_request_target
 
 jobs:
   my_job:
