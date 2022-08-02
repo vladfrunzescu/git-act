@@ -15,20 +15,4 @@ jobs:
       - uses: actions/github-script@v6
         with:
           script: |
-            const creator = context.payload.sender.login
-            const result = await github.rest.teams.getMembershipForUserInOrg({
-              org: context.repo.owner,
-              team_slug: 'my-cool-team',
-              username: creator
-            })
-            console.log(creator, result) // do whatever you want
-            if (result){
-              const approve_result = await github.pulls.createReview({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: context.issue.number,
-                event: "APPROVE"
-              })
-              console.log(approve_result.status)
-            }
-            console.log(approve_result.status)
+            console.log("start")
