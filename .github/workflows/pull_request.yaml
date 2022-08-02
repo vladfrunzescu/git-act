@@ -4,7 +4,6 @@ jobs:
   my_job:
     name: Auto-approve
     runs-on: ubuntu-latest
-    if: contains(github.ref, 'requests/prod')
     steps:
       - uses: actions/github-script@v6
         with:
